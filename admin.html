@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Panel | Barangay Cugman System</title>
+    <title>Admin Portal Login | Barangay Cugman System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
     :root {
@@ -58,101 +58,101 @@
         background: var(--accent);
     }
     nav ul li.hide { display: none; }
-    section {
-        min-height: 85vh;
-        padding-top: 100px;
-        text-align: center;
+    .container {
+        margin-top: 120px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    #admin-panel {
+    .login-panel {
         background: var(--panel-bg);
         border-radius: var(--radius);
-        margin: 55px 10vw 38px 10vw;
         box-shadow: var(--shadow);
-        max-width: 520px;
+        max-width: 410px;
         width: 100%;
-        padding: 35px 24px 45px 24px;
-        position: relative;
+        padding: 38px 32px 28px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    #admin-panel h1 {
+    h2 {
         color: var(--primary);
-        margin-bottom: 22px;
-    }
-    #admin-panel p {
-        color: #333;
-        font-size: 1.15em;
-        margin-bottom: 26px;
-    }
-    .default-credentials {
-        margin: 0 auto 0 auto;
-        background: #fcfcffc7;
-        padding: 15px 10px 8px 10px;
-        border-radius: 13px;
-        box-shadow: 0 1px 6px #17202a1b;
-        font-size: 1.07em;
-        width: 88%;
-        max-width: 275px;
-        text-align: left;
-        border: 1.2px solid #d4e8ec;
-    }
-    .default-credentials strong { color: #147469; }
-    #admin-panel .restricted-note {
-        margin-top: 22px;
-        color: var(--danger);
-        font-size: 1em;
-        background: #fff5f68a;
-        padding: 8px 7px 8px 7px;
-        border-radius: 10px;
-        box-shadow: 0 1px 6px #eed7d8a7;
-        display: inline-block;
-    }
-    footer#contact {
-        background: var(--footer-bg);
-        color: #ffffff;
+        margin-bottom: 16px;
         text-align: center;
-        padding: 24px 0 24px 0;
-        letter-spacing: 0.7px;
-        box-shadow: 0 0.5px 8px #2329422a;
-        border-radius: var(--radius) var(--radius) 0 0;
-        margin-top: 35px;
     }
-    #contact p { margin: 4px 0; font-size: 0.99em;}
-    * { box-sizing: border-box; }
-    html, body { margin:0; padding:0; }
+    form {
+        display: flex;
+        flex-direction: column;
+        min-width: 180px;
+        gap: 15px;
+        width: 100%;
+        align-items: center;
+    }
+    input {
+        padding: 11px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        width: 92%;
+        max-width: 270px;
+    }
+    button {
+        background: #319795;
+        color: white;
+        border: none;
+        padding: 11px;
+        border-radius: 6px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 9px;
+        width: 99%;
+        transition: background 0.18s;
+    }
+    button:hover {
+        background: #25646d;
+    }
+    .credentials {
+        margin-top: 18px;
+        background: #fcfcffc4;
+        padding: 12px 10px 7px 10px;
+        border-radius: 13px;
+        box-shadow: 0 1px 5px #17202a21;
+        font-size: .97em;
+        width: 94%;
+        text-align: center;
+    }
+    .credentials strong { color: #116067; }
     @media (max-width: 600px) {
-        #admin-panel { margin: 18px 2vw 24px 2vw; padding: 17px 1vw 35px 1vw; }
+        .login-panel { padding: 14px 2vw; }
+        .container { margin-top: 95px; }
     }
     </style>
 </head>
 <body>
-    <!-- NAVIGATION BAR -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="resident.html" id="resident-link">Resident Portal</a></li>
-            <li class="hide"><a href="#" id="admin-link" class="active">Admin Panel</a></li>
+            <li><a href="#" id="admin-link" class="active">Admin Panel</a></li>
             <li><a href="index.html#about">About</a></li>
             <li><a href="index.html#contact">Contacts</a></li>
         </ul>
     </nav>
-    <section id="admin-panel">
-        <h1>Admin Panel</h1>
-        <p>Welcome to the Barangay Cugman System administrator panel.<br>
-        Please login to access sensitive features and manage system records.<br></p>
-        <div class="default-credentials">
-            <div><strong>User:</strong> Admin</div>
-            <div><strong>Pass:</strong> Admin123</div>
+    <div class="container">
+        <div class="login-panel">
+            <h2>Admin Login</h2>
+            <form>
+                <input type="text" placeholder="Username" autocomplete="off">
+                <input type="password" placeholder="Password" autocomplete="off">
+                <button type="submit" formaction="admin-dashboard.html">Login</button>
+            </form>
+            <div class="credentials">
+                <div><b>Admin credentials (Demo):</b></div>
+                <div>Username: <strong>admin</strong></div>
+                <div>Password: <strong>admin123</strong></div>
+            </div>
         </div>
-        <div class="restricted-note">
-            <b>Note:</b> <br>This area is for administrators only and is hidden to residents.
-        </div>
-    </section>
-    <!-- FOOTER -->
-    <footer id="contact">
-        <p>Email: Group1@phinmaed.com</p>
-        <p>Contact: 091234567891</p>
-    </footer>
+    </div>
 </body>
 </html>
