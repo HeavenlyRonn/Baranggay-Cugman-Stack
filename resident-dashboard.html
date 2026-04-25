@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resident Dashboard | Barangay Cugman System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    :root {
+        --main-bg: #e8fafd;
+        --navbar-bg: #2c3e50e0;
+        --primary: #319795;
+        --accent: #ffd166;
+        --danger: #de425b;
+        --panel-bg: #b2bec3e6;
+        --footer-bg: #232942;
+        --radius: 1.2rem;
+        --shadow: 0 2px 20px rgba(60,140,150,0.12);
+    }
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        height: 100vh;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        font-family: Arial, sans-serif;
+        background: var(--main-bg) url('test.jpeg') no-repeat center center fixed;
+        background-size: cover;
+        color: #23576d;
+    }
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        background: var(--navbar-bg);
+        padding: 16px 0;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(44,62,80,0.12);
+        border-radius: 0 0 var(--radius) var(--radius);
+        backdrop-filter: blur(9px);
+    }
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        padding-right: 40px;
+        margin: 0;
+    }
+    nav ul li {
+        margin: 0 20px;
+    }
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 7px;
+        transition: background 0.2s, color 0.2s;
+    }
+    nav ul li a:hover, nav ul li a.active {
+        color: #232942;
+        background: var(--accent);
+    }
+    .dashboard-center {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        width: 100vw;
+        margin-top: 40px;
+    }
+    .dashboard-panel {
+        background: var(--panel-bg);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        max-width: 420px;
+        width: 100%;
+        padding: 38px 32px 26px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
+    h2 {
+        color: #319795;
+        margin-bottom: 18px;
+        text-align: center;
+    }
+    .note {
+        background: #fcf7e8;
+        color: #b39336;
+        font-size: 0.98rem;
+        border-radius: 6px;
+        padding: 10px 14px;
+        margin-bottom: 14px;
+        text-align: center;
+    }
+    .doc-btn-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+        margin-bottom: 22px;
+    }
+    .doc-btn {
+        background: #319795;
+        color: white;
+        font-size: 1.08rem;
+        padding: 14px;
+        border: none;
+        border-radius: 7px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        transition: background 0.19s;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .doc-btn:hover { background: #25646d; }
+    .sent-notification {
+        margin-top: 8px;
+        color: #319795;
+        font-weight: bold;
+        text-align: center;
+    }
+    @media (max-width: 600px) {
+        .dashboard-panel { padding: 13px 2vw; }
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resident.html" id="resident-link" class="active">Resident Portal</a></li>
+            <li><a href="admin.html" id="admin-link">Admin Panel</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contacts</a></li>
+        </ul>
+    </nav>
+    <div class="dashboard-center">
+        <div class="dashboard-panel">
+            <h2>Resident Dashboard</h2>
+            <div class="note">Request a Document</div>
+            <div class="doc-btn-list">
+                <a href="#" class="doc-btn" onclick="return false;">Barangay Clearance</a>
+                <a href="#" class="doc-btn" onclick="return false;">Certificate of Indigency</a>
+                <a href="#" class="doc-btn" onclick="return false;">Barangay Residency</a>
+            </div>
+            <div class="note">This is a demo. Clicking a request will only simulate a request being sent.</div>
+            <div class="sent-notification">Request sent!</div>
+        </div>
+    </div>
+</body>
+</html>
