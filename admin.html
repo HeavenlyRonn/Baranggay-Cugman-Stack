@@ -16,18 +16,37 @@
         --radius: 1.2rem;
         --shadow: 0 2px 20px rgba(60,140,150,0.12);
     }
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
     body {
+        height: 100vh;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
         font-family: Arial, sans-serif;
         background: var(--main-bg) url('test.jpeg') no-repeat center center fixed;
         background-size: cover;
         color: #23576d;
+    }
+    .main-center {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         min-height: 100vh;
-        box-sizing: border-box;
+        width: 100vw;
     }
     nav {
         position: fixed;
         top: 0;
-        width: 100%;
+        left: 0;
+        width: 100vw;
         background: var(--navbar-bg);
         padding: 16px 0;
         z-index: 1000;
@@ -40,6 +59,7 @@
         justify-content: flex-end;
         list-style: none;
         padding-right: 40px;
+        margin: 0;
     }
     nav ul li {
         margin: 0 20px;
@@ -58,12 +78,6 @@
         background: var(--accent);
     }
     nav ul li.hide { display: none; }
-    .container {
-        margin-top: 120px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
     .login-panel {
         background: var(--panel-bg);
         border-radius: var(--radius);
@@ -74,6 +88,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 0 auto;
     }
     h2 {
         color: var(--primary);
@@ -125,7 +140,6 @@
     .credentials strong { color: #116067; }
     @media (max-width: 600px) {
         .login-panel { padding: 14px 2vw; }
-        .container { margin-top: 95px; }
     }
     </style>
 </head>
@@ -139,7 +153,7 @@
             <li><a href="index.html#contact">Contacts</a></li>
         </ul>
     </nav>
-    <div class="container">
+    <div class="main-center">
         <div class="login-panel">
             <h2>Admin Login</h2>
             <form>
