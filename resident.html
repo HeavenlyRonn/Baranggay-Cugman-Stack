@@ -1,110 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Resident Portal | Baranggay Cugman</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
+    <meta charset="UTF-8">
+    <title>Resident Portal | Barangay Cugman System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
     :root {
-      --main-bg: #e8fafd;
-      --primary: #319795;
-      --primary-light: #e0f7fa;
-      --accent: #ffd166;
-      --panel-bg: #fff3e0;
-      --text-main: #23576d;
-      --shadow: 0 2px 20px rgba(60,140,150,0.07);
-      --border: #cbe3ea;
-      --danger: #de425b;
-      --panel-border: #f1b675;
+        --main-bg: #e8fafd;
+        --navbar-bg: #2c3e50e0;
+        --primary: #319795;
+        --accent: #ffd166;
+        --danger: #de425b;
+        --panel-bg: #b2bec3e6;
+        --footer-bg: #232942;
+        --radius: 1.2rem;
+        --shadow: 0 2px 20px rgba(60,140,150,0.12);
     }
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: var(--main-bg) url('https://www.svgbackgrounds.com/wp-content/uploads/2021/05/gray-diagonal-stripes.svg') repeat;
-      color: var(--text-main);
-      min-height: 100vh;
-      padding-bottom: 40px;
-      background-size: cover;
+        font-family: Arial, sans-serif;
+        background: var(--main-bg) url('test.jpeg') no-repeat center center fixed;
+        background-size: cover;
+        color: #23576d;
+        min-height: 100vh;
+        box-sizing: border-box;
     }
-    header {
-      background: var(--primary);
-      color: #fff;
-      padding: 1.5rem 0;
-      border-radius: 0 0 1.2rem 1.2rem;
-      box-shadow: 0 4px 12px rgba(80,200,200,0.14);
-      margin-bottom: 2rem;
-      text-align: center;
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--navbar-bg);
+        padding: 16px 0;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(44,62,80,0.12);
+        border-radius: 0 0 var(--radius) var(--radius);
+        backdrop-filter: blur(9px);
     }
-    header nav a {
-      color: var(--primary-light);
-      margin: 0 1.3rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        padding-right: 40px;
     }
-    header nav a:hover { color: var(--accent); }
-    main {
-      max-width: 650px;
-      margin: auto;
-      background: #fff;
-      border-radius: 1.5rem;
-      box-shadow: var(--shadow);
-      padding: 2rem;
+    nav ul li {
+        margin: 0 20px;
     }
-    .panel {
-      background: var(--panel-bg);
-      border-radius: 1.2rem;
-      padding: 1.5rem;
-      border: 1.5px solid var(--panel-border);
-      margin-bottom: 2rem;
-      margin-top: 1rem;
-      text-align: center;
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 7px;
+        transition: background 0.2s, color 0.2s;
     }
-    .credentials {
-      margin-top: 2rem;
-      background: var(--main-bg);
-      border-radius: 1.2rem;
-      padding: 1.3rem 1rem;
-      box-shadow: 0 1px 6px rgba(60,140,150,0.04);
-      display: inline-block;
-      text-align: left;
+    nav ul li a:hover, nav ul li a.active {
+        color: #232942;
+        background: var(--accent);
     }
-    .credentials h3 {
-      font-size: 1rem;
-      color: #1f575c;
-      margin-bottom: .3rem;
+    nav ul li.hide { display: none; }
+
+    section {
+        min-height: 86vh;
+        padding-top: 100px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    .small { font-size: 0.93em; }
+    #resident-panel {
+        background: var(--panel-bg);
+        border-radius: var(--radius);
+        margin: 55px 10vw 38px 10vw;
+        box-shadow: var(--shadow);
+        max-width: 470px;
+        width: 100%;
+        padding: 30px 24px 36px 24px;
+        position: relative;
+    }
+    #resident-panel h1 { color: var(--primary); margin-bottom: 22px; }
+    #resident-panel form {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #resident-panel input {
+        padding: 13px;
+        margin: 11px;
+        width: 90%;
+        max-width: 270px;
+        border-radius: 16px;
+        border: 1.3px solid #b0bec5;
+        font-size: 1em;
+        outline: none;
+        transition: border 0.15s;
+        background: #ffffff80;
+    }
+    #resident-panel input:focus {
+        border: 1.5px solid var(--primary);
+        background: #ffffffce;
+    }
+    #resident-panel button {
+        padding: 10px 23px;
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 1em;
+        margin: 4px 5px 0 5px;
+        transition: background 0.22s;
+    }
+    #resident-panel button[type="Register"] {
+        background: var(--accent);
+        color: #232942;
+    }
+    #resident-panel button:hover { background: #25646d; }
+    #resident-panel button[type="Register"]:hover { background: #f8e6a4; }
+    .default-credentials {
+        margin-top: 26px;
+        background: #fcfcffc4;
+        padding: 12px 10px 6px 10px;
+        border-radius: 13px;
+        box-shadow: 0 1px 7px #17202a18;
+        font-size: .97em;
+    }
+    .default-credentials strong { color: #116067; }
+    .restricted-note {
+        margin-top: 20px;
+        color: var(--danger);
+        font-size: .98em;
+        background: #fff5f68a;
+        padding: 7px 7px 8px 7px;
+        border-radius: 10px;
+        box-shadow: 0 1px 6px #eed7d8a7;
+        display: inline-block;
+    }
+    footer#contact {
+        background: var(--footer-bg);
+        color: #ffffff;
+        text-align: center;
+        padding: 24px 0 24px 0;
+        letter-spacing: 0.7px;
+        box-shadow: 0 0.5px 8px #2329422a;
+        border-radius: var(--radius) var(--radius) 0 0;
+        margin-top: 35px;
+    }
+    #contact p { margin: 4px 0; font-size: 0.99em;}
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; }
     @media (max-width: 600px) {
-      main { padding: 1rem; }
-      .credentials { width: 100%; }
+        #resident-panel { margin: 16px 2vw 24px 2vw; padding: 15px 1vw 22px 1vw; }
     }
-  </style>
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Resident Portal</h1>
+    <!-- NAVIGATION BAR -->
     <nav>
-      <a href="index.html">Home</a>
-      <a href="#" class="hidden">Resident Portal</a>
-      <a href="admin.html" id="admin-btn">Admin Panel</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="hide"><a href="#" id="resident-link" class="active">Resident Portal</a></li>
+            <li><a href="admin.html" id="admin-link">Admin Panel</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contacts</a></li>
+        </ul>
     </nav>
-  </header>
-  <main>
-    <section class="panel">
-      <h2>Resident Dashboard</h2>
-      <p>Welcome to the Resident Portal! Access community news, announcements, and your records.<br><br>
-      <span class="small" style="color: #555">This is a sample page; real features require web development.</span>
-      </p>
+    <section id="resident-panel">
+        <h1>Resident Portal</h1>
+        <form>
+            <input type="text" placeholder="Username" autocomplete="username"><br>
+            <input type="password" placeholder="Password" autocomplete="current-password"><br>
+            <button type="submit">Login</button>
+            <button type="button" onclick="alert('Registration feature coming soon!')">Register</button>
+        </form>
+        <div class="default-credentials">
+            <div><strong>User:</strong> Resident</div>
+            <div><strong>Pass:</strong> Resident123</div>
+        </div>
+        <div class="restricted-note">
+            <b>Note:</b><br>
+            Resident features are separate from administrator access.
+        </div>
     </section>
-    <div class="credentials">
-      <h3>Default Resident Credentials</h3>
-      <p><strong>User:</strong> Resident<br>
-        <strong>Pass:</strong> Resident123
-      </p>
-    </div>
-  </main>
-  <footer>
-    <small>&copy; 2026 Baranggay Cugman. All rights reserved.</small>
-  </footer>
+    <!-- FOOTER -->
+    <footer id="contact">
+        <p>Email: Group1@phinmaed.com</p>
+        <p>Contact: 091234567891</p>
+    </footer>
 </body>
 </html>
