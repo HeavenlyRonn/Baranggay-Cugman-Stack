@@ -86,39 +86,25 @@
         padding-top: 10px;
         text-shadow: 0 2px 8px rgb(60,80,125,0.08);
         max-width: 550px;
-    }
-    .portal-links {
-        display: flex;
-        gap: 32px;
-        margin: 34px 0 18px 0;
-        justify-content: center;
-    }
-    .portal-btn {
-        background: #319795;
-        color: white;
-        font-size: 1.2rem;
-        text-decoration: none;
-        padding: 22px 38px;
-        border-radius: 12px;
-        font-weight: bold;
-        box-shadow: 0 4px 16px rgba(50,159,107,0.13);
-        transition: background 0.19s;
-        margin: 0 10px;
-    }
-    .portal-btn:hover {
-        background: #25646d;
+        margin-left: auto;
+        margin-right: auto;
     }
     #about {
         background: var(--about-bg);
         border-radius: var(--radius);
-        margin: 35px 7vw;
+        margin: 35px auto;
         box-shadow: var(--shadow);
         max-width: 780px;
         width: 100%;
         padding: 34px 48px 34px 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
-    #about h1 { color: var(--primary); }
-    #about b { display:block; color:#232942; margin-bottom: 11px; font-size:110%; }
+    #about h1 { color: var(--primary); text-align: center; }
+    #about b { display:block; color:#232942; margin-bottom: 11px; font-size:110%; text-align:center; }
     #about p {
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;
@@ -139,7 +125,6 @@
         margin-top: 35px;
     }
     #contact p { margin: 4px 0; font-size: 0.99em; }
-    /* RESET & BASE */
     * { box-sizing: border-box; }
     html, body { margin:0; padding:0; }
     @media (max-width: 800px) {
@@ -168,11 +153,6 @@
         <h1>Welcome to Barangay Cugman Request System</h1>
         <br><br>
         <p>A place where your documents are safe and can be accessed through your account.</p>
-        <!-- Portal links -->
-        <div class="portal-links">
-            <a href="admin.html" class="portal-btn">Admin Portal</a>
-            <a href="resident.html" class="portal-btn">Resident Portal</a>
-        </div>
     </section>
     <!-- ABOUT SECTION -->
     <section id="about">
