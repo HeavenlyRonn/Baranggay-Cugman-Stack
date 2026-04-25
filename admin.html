@@ -1,113 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Admin Panel | Baranggay Cugman</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
+    <meta charset="UTF-8">
+    <title>Admin Panel | Barangay Cugman System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
     :root {
-      --main-bg: #e8fafd;
-      --primary: #319795;
-      --primary-light: #e0f7fa;
-      --accent: #ffd166;
-      --panel-bg: #fff3e0;
-      --text-main: #23576d;
-      --shadow: 0 2px 20px rgba(60,140,150,0.07);
-      --border: #cbe3ea;
-      --danger: #de425b;
-      --panel-border: #f1b675;
+        --main-bg: #e8fafd;
+        --navbar-bg: #2c3e50e0;
+        --primary: #319795;
+        --accent: #ffd166;
+        --danger: #de425b;
+        --panel-bg: #f9fafbde;
+        --footer-bg: #232942;
+        --radius: 1.2rem;
+        --shadow: 0 2px 20px rgba(60,140,150,0.12);
     }
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: var(--main-bg) url('https://www.svgbackgrounds.com/wp-content/uploads/2021/05/gray-diagonal-stripes.svg') repeat;
-      color: var(--text-main);
-      min-height: 100vh;
-      padding-bottom: 40px;
-      background-size: cover;
+        font-family: Arial, sans-serif;
+        background: var(--main-bg) url('test.jpeg') no-repeat center center fixed;
+        background-size: cover;
+        color: #23576d;
+        min-height: 100vh;
+        box-sizing: border-box;
     }
-    header {
-      background: var(--primary);
-      color: #fff;
-      padding: 1.5rem 0;
-      border-radius: 0 0 1.2rem 1.2rem;
-      box-shadow: 0 4px 12px rgba(80,200,200,0.14);
-      margin-bottom: 2rem;
-      text-align: center;
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--navbar-bg);
+        padding: 16px 0;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(44,62,80,0.12);
+        border-radius: 0 0 var(--radius) var(--radius);
+        backdrop-filter: blur(9px);
     }
-    header nav a {
-      color: var(--primary-light);
-      margin: 0 1.3rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        padding-right: 40px;
     }
-    header nav a:hover { color: var(--accent); }
-    main {
-      max-width: 650px;
-      margin: auto;
-      background: #fff;
-      border-radius: 1.5rem;
-      box-shadow: var(--shadow);
-      padding: 2rem;
+    nav ul li {
+        margin: 0 20px;
     }
-    .panel {
-      background: var(--panel-bg);
-      border-radius: 1.2rem;
-      padding: 1.5rem;
-      border: 1.5px solid var(--panel-border);
-      margin-bottom: 2rem;
-      margin-top: 1rem;
-      text-align: center;
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 7px;
+        transition: background 0.2s, color 0.2s;
     }
-    .credentials {
-      margin-top: 2rem;
-      background: var(--main-bg);
-      border-radius: 1.2rem;
-      padding: 1.3rem 1rem;
-      box-shadow: 0 1px 6px rgba(60,140,150,0.04);
-      display: inline-block;
-      text-align: left;
+    nav ul li a:hover, nav ul li a.active {
+        color: #232942;
+        background: var(--accent);
     }
-    .credentials h3 {
-      font-size: 1rem;
-      color: #1f575c;
-      margin-bottom: .3rem;
+    nav ul li.hide { display: none; }
+    section {
+        min-height: 85vh;
+        padding-top: 100px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    .red {
-      color: var(--danger);
+    #admin-panel {
+        background: var(--panel-bg);
+        border-radius: var(--radius);
+        margin: 55px 10vw 38px 10vw;
+        box-shadow: var(--shadow);
+        max-width: 520px;
+        width: 100%;
+        padding: 35px 24px 45px 24px;
+        position: relative;
     }
-    .small { font-size: 0.93em; }
+    #admin-panel h1 {
+        color: var(--primary);
+        margin-bottom: 22px;
+    }
+    #admin-panel p {
+        color: #333;
+        font-size: 1.15em;
+        margin-bottom: 26px;
+    }
+    .default-credentials {
+        margin: 0 auto 0 auto;
+        background: #fcfcffc7;
+        padding: 15px 10px 8px 10px;
+        border-radius: 13px;
+        box-shadow: 0 1px 6px #17202a1b;
+        font-size: 1.07em;
+        width: 88%;
+        max-width: 275px;
+        text-align: left;
+        border: 1.2px solid #d4e8ec;
+    }
+    .default-credentials strong { color: #147469; }
+    #admin-panel .restricted-note {
+        margin-top: 22px;
+        color: var(--danger);
+        font-size: 1em;
+        background: #fff5f68a;
+        padding: 8px 7px 8px 7px;
+        border-radius: 10px;
+        box-shadow: 0 1px 6px #eed7d8a7;
+        display: inline-block;
+    }
+    footer#contact {
+        background: var(--footer-bg);
+        color: #ffffff;
+        text-align: center;
+        padding: 24px 0 24px 0;
+        letter-spacing: 0.7px;
+        box-shadow: 0 0.5px 8px #2329422a;
+        border-radius: var(--radius) var(--radius) 0 0;
+        margin-top: 35px;
+    }
+    #contact p { margin: 4px 0; font-size: 0.99em;}
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; }
     @media (max-width: 600px) {
-      main { padding: 1rem; }
-      .credentials { width: 100%; }
+        #admin-panel { margin: 18px 2vw 24px 2vw; padding: 17px 1vw 35px 1vw; }
     }
-  </style>
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Admin Panel</h1>
+    <!-- NAVIGATION BAR -->
     <nav>
-      <a href="index.html">Home</a>
-      <a href="resident.html" id="resident-btn">Resident Portal</a>
-      <a href="#" class="hidden">Admin Panel</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resident.html" id="resident-link">Resident Portal</a></li>
+            <li class="hide"><a href="#" id="admin-link" class="active">Admin Panel</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contacts</a></li>
+        </ul>
     </nav>
-  </header>
-  <main>
-    <section class="panel">
-      <h2>Administrator Access</h2>
-      <p>Welcome, Admin! Here you can manage Baranggay Cugman residents and system settings.<br><br>
-      <span class="red small">This is a demonstration only. Actual functionalities require proper backend/server implementation.</span>
-      </p>
+    <section id="admin-panel">
+        <h1>Admin Panel</h1>
+        <p>Welcome to the Barangay Cugman System administrator panel.<br>
+        Please login to access sensitive features and manage system records.<br></p>
+        <div class="default-credentials">
+            <div><strong>User:</strong> Admin</div>
+            <div><strong>Pass:</strong> Admin123</div>
+        </div>
+        <div class="restricted-note">
+            <b>Note:</b> <br>This area is for administrators only and is hidden to residents.
+        </div>
     </section>
-    <div class="credentials">
-      <h3>Default Admin Credentials</h3>
-      <p><strong>User:</strong> Admin<br>
-        <strong>Pass:</strong> Admin123
-      </p>
-    </div>
-  </main>
-  <footer>
-    <small>&copy; 2026 Baranggay Cugman. All rights reserved.</small>
-  </footer>
+    <!-- FOOTER -->
+    <footer id="contact">
+        <p>Email: Group1@phinmaed.com</p>
+        <p>Contact: 091234567891</p>
+    </footer>
 </body>
 </html>
