@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Baranggay Cugman Stack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --main-bg: #e8fafd;
+      --primary: #319795;
+      --primary-light: #e0f7fa;
+      --accent: #ffd166;
+      --panel-bg: #fff3e0;
+      --text-main: #23576d;
+      --shadow: 0 2px 20px rgba(60,140,150,0.07);
+      --border: #cbe3ea;
+      --danger: #de425b;
+      --panel-border: #f1b675;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--main-bg) url('https://www.svgbackgrounds.com/wp-content/uploads/2021/05/gray-diagonal-stripes.svg') repeat;
+      color: var(--text-main);
+      min-height: 100vh;
+      padding-bottom: 40px;
+      background-size: cover;
+    }
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 1.5rem 0;
+      border-radius: 0 0 1.2rem 1.2rem;
+      box-shadow: 0 4px 12px rgba(80,200,200,0.14);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    header nav a {
+      color: var(--primary-light);
+      margin: 0 1.3rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    header nav a:hover { color: var(--accent); }
+    main {
+      max-width: 650px;
+      margin: auto;
+      background: #fff;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow);
+      padding: 2rem;
+    }
+    .welcome {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .welcome h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .login-info {
+      margin-bottom: 2rem;
+      background: var(--main-bg);
+      border-radius: 1.2rem;
+      padding: 1.3rem 1rem;
+      box-shadow: 0 1px 6px rgba(60,140,150,0.04);
+    }
+    .credentials {
+      display: flex;
+      gap: 2rem;
+      justify-content: space-around;
+      margin-bottom: 1rem;
+    }
+    .credentials div {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 1rem;
+      min-width: 145px;
+      border: 2px solid var(--border);
+    }
+    .credentials h3 {
+      font-size: 1rem;
+      color: #1f575c;
+      margin-bottom: .3rem;
+    }
+    .red { color: var(--danger); }
+    .panel {
+      background: var(--panel-bg);
+      border-radius: 1.2rem;
+      padding: 1rem 1.5rem;
+      margin-top: 1.5rem;
+      border: 1.5px solid var(--panel-border);
+    }
+    .hidden { display: none !important; }
+    .small { font-size: 0.93em; }
+    @media (max-width: 600px) {
+      .credentials { flex-direction: column; gap: 1rem; }
+      main { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Baranggay Cugman Portal</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="resident.html" id="resident-btn">Resident Portal</a>
+      <a href="admin.html" id="admin-btn">Admin Panel</a>
+    </nav>
+  </header>
+  <main>
+    <section class="welcome">
+      <h2>Welcome to Baranggay Cugman</h2>
+      <p>Connecting residents and administrators efficiently.</p>
+    </section>
+    <section class="login-info">
+      <h2>Default Portal Logins</h2>
+      <div class="credentials">
+        <div>
+          <h3>Admin Portal</h3>
+          <p><strong>User:</strong> Admin<br>
+          <strong>Pass:</strong> Admin123</p>
+        </div>
+        <div>
+          <h3>Resident Portal</h3>
+          <p><strong>User:</strong> Resident<br>
+          <strong>Pass:</strong> Resident123</p>
+        </div>
+      </div>
+      <p class="red small">Note: Admin and Resident portals are accessible via the navbar.</p>
+    </section>
+  </main>
+  <footer>
+    <small>&copy; 2026 Baranggay Cugman. All rights reserved.</small>
+  </footer>
+</body>
+</html>

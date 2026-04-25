@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resident Portal | Baranggay Cugman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --main-bg: #e8fafd;
+      --primary: #319795;
+      --primary-light: #e0f7fa;
+      --accent: #ffd166;
+      --panel-bg: #fff3e0;
+      --text-main: #23576d;
+      --shadow: 0 2px 20px rgba(60,140,150,0.07);
+      --border: #cbe3ea;
+      --danger: #de425b;
+      --panel-border: #f1b675;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--main-bg) url('https://www.svgbackgrounds.com/wp-content/uploads/2021/05/gray-diagonal-stripes.svg') repeat;
+      color: var(--text-main);
+      min-height: 100vh;
+      padding-bottom: 40px;
+      background-size: cover;
+    }
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 1.5rem 0;
+      border-radius: 0 0 1.2rem 1.2rem;
+      box-shadow: 0 4px 12px rgba(80,200,200,0.14);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    header nav a {
+      color: var(--primary-light);
+      margin: 0 1.3rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    header nav a:hover { color: var(--accent); }
+    main {
+      max-width: 650px;
+      margin: auto;
+      background: #fff;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow);
+      padding: 2rem;
+    }
+    .panel {
+      background: var(--panel-bg);
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      border: 1.5px solid var(--panel-border);
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .credentials {
+      margin-top: 2rem;
+      background: var(--main-bg);
+      border-radius: 1.2rem;
+      padding: 1.3rem 1rem;
+      box-shadow: 0 1px 6px rgba(60,140,150,0.04);
+      display: inline-block;
+      text-align: left;
+    }
+    .credentials h3 {
+      font-size: 1rem;
+      color: #1f575c;
+      margin-bottom: .3rem;
+    }
+    .small { font-size: 0.93em; }
+    @media (max-width: 600px) {
+      main { padding: 1rem; }
+      .credentials { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Resident Portal</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#" class="hidden">Resident Portal</a>
+      <a href="admin.html" id="admin-btn">Admin Panel</a>
+    </nav>
+  </header>
+  <main>
+    <section class="panel">
+      <h2>Resident Dashboard</h2>
+      <p>Welcome to the Resident Portal! Access community news, announcements, and your records.<br><br>
+      <span class="small" style="color: #555">This is a sample page; real features require web development.</span>
+      </p>
+    </section>
+    <div class="credentials">
+      <h3>Default Resident Credentials</h3>
+      <p><strong>User:</strong> Resident<br>
+        <strong>Pass:</strong> Resident123
+      </p>
+    </div>
+  </main>
+  <footer>
+    <small>&copy; 2026 Baranggay Cugman. All rights reserved.</small>
+  </footer>
+</body>
+</html>
